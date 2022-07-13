@@ -1,3 +1,5 @@
+using Company.Domain.Services;
+using Company.Infastructure.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +33,7 @@ namespace Company.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Company.API", Version = "v1" });
             });
+            services.AddScoped<ICompanyService, CompanyService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -8,6 +8,7 @@ namespace Company.Domain.DTOS
 {
     public class CompanyDTO
     {
+        public Guid ID { get; set; }
         public string CompanyName { get; set; }
         public string CompanyType { get; set; }
         public string TaxAdmin { get; set; }
