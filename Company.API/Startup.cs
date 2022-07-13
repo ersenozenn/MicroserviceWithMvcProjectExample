@@ -1,4 +1,5 @@
 using Company.Domain.Services;
+using Company.Infastructure.Data;
 using Company.Infastructure.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,6 +34,7 @@ namespace Company.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Company.API", Version = "v1" });
             });
+            services.AddDbContext<CompanyDbContext>();
             services.AddScoped<ICompanyService, CompanyService>();
         }
 
