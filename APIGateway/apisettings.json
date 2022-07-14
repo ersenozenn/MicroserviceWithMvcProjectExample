@@ -2,26 +2,26 @@
   "Routes": [
     {
       "DownstreamPathTemplate": "/api/company?Id={Id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 44365
+          "Port": 59467
         }
       ],
       "UpstreamPathTemplate": "/company/{Id}",
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
-      "DownstreamPathTemplate": "/api/department?companyId={companyId}",
-      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/api/v1",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 44313
+          "Port": 32168
         }
       ],
-      "UpstreamPathTemplate": "/department/{companyId}",
+      "UpstreamPathTemplate": "/department",
       "UpstreamHttpMethod": [ "Get" ]
     }
   ]

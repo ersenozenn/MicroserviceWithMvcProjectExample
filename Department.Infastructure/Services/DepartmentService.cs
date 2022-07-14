@@ -17,14 +17,16 @@ namespace Department.Infastructure.Services
             this.db = db;
         }
     
-        public DepartmentDTO GetDepartmentByCompanyId(Guid companyId)
+        public DepartmentDTO GetDepartmentByCompanyId(string companyId)
         {
-            if (companyId == default(Guid))
-            {
-                return null;
-            }
-            var department = db.Departments.FirstOrDefault(d => d.CompanyId == companyId); ;
+            //if (companyId == default(Guid))
+            //{
+            //    return null;
+            //}
+            //var department = db.Departments.FirstOrDefault(d => d.CompanyId == companyId); ;
 
+            //return department;
+            var department = db.Departments.FirstOrDefault(d => d.DepartmentName == "IT");
             return department;
         }
     }

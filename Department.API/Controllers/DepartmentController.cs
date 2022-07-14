@@ -4,19 +4,18 @@ using System;
 
 namespace Department.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1")]
     [ApiController]
-    public class DepartmentController : Controller
+    public class DepartmentController : ControllerBase
     {
         private readonly IDepartmentService DepartmentService;
         public DepartmentController(IDepartmentService departmentService)
         {
             DepartmentService = departmentService;
-        }
-    
-        public ActionResult GetByCompanyId(Guid companyId)
+        }       
+        public ActionResult Get()
         {
-            var department = DepartmentService.GetDepartmentByCompanyId(companyId); 
+            var department = DepartmentService.GetDepartmentByCompanyId("IT"); 
             return Ok(department);
         }
     }

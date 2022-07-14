@@ -9,6 +9,6 @@ namespace Department.Domain.Services
 {
     public interface IDepartmentService
     {
-        DepartmentDTO GetDepartmentByCompanyId(Guid companyId);
+        DepartmentDTO GetDepartmentByCompanyId(string companyId);
     }
 }
