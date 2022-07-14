@@ -1,3 +1,6 @@
+using Department.Domain.Services;
+using Department.Infastructure.Data;
+using Department.Infastructure.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +34,8 @@ namespace Department.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Department.API", Version = "v1" });
             });
+            services.AddDbContext<DepartmentDbContext>();
+            services.AddScoped<IDepartmentService, DepartmentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
